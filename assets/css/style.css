@@ -1,0 +1,164 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url("https://images6.alphacoders.com/107/1076941.jpg") no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    color: white;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("https://www.transparenttextures.com/patterns/stardust.png");
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+
+.navbar {
+    background: #111;
+    padding: 12px 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-brand {
+    font-size: 22px;
+    font-weight: 700;
+    color: #f39c12 !important;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.brand-name {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    background: linear-gradient(45deg, #ff004c, #ff9100, #ffe600);
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    background-clip: text; 
+    color: transparent; 
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+    margin: 0;
+}
+
+
+.navbar-nav .nav-link {
+    color: #fff !important;
+    font-weight: 500;
+    margin: 0 8px;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #f39c12 !important;
+}
+
+#moviecontainer .card {
+    height: 450px;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #1a1a1a;
+    overflow: hidden;
+    border: none;
+}
+
+#moviecontainer .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.moviecard {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    border-radius: 18px;
+}
+
+.moviecard img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.moviecard:hover img {
+    transform: scale(1.15);
+    filter: brightness(70%);
+}
+
+/* Title info at bottom */
+.titleinfo {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.9));
+    color: #fff;
+}
+
+.titleinfo h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.titleinfo h3 span {
+    font-size: 14px;
+    padding: 6px 10px;
+    border-radius: 12px;
+}
+
+/* Overview popup */
+.overview {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 75%;
+    width: 100%;
+    background: rgba(20, 20, 20, 0.95);
+    backdrop-filter: blur(10px);
+    color: #fff;
+    padding: 20px;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 0.45s ease-in-out;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    overflow-y: auto;
+}
+
+.moviecard:hover .overview {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.overview h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #ff9800;
+}
+
+.overview p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #ddd;
+}
